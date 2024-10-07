@@ -1,0 +1,62 @@
+
+#BASIC Math operations
+import math 
+print("Hello World")
+a = 10
+b = 20.5
+c = a + b + 3**2
+print(math.sqrt(c))
+
+while True: # start infinite loop
+    x = input("Your name? ")  # returns a str-object
+    if x == "q":
+        break # finish loop
+    print("Hello ", x)
+
+
+    #LOCAL VARIABLES
+def square(z):
+    x = z**2 # x: local variable
+    #print(x)
+    return x
+
+x, a = 5, 3 # "unpacking" a tuple
+
+v= square(a) # -> 9
+print (v)
+square(x) # -> 25
+print(x) # -> 5  (not changed)
+# if we add print in the func then return aint necessary but with return we need to print seperately outside func
+
+
+
+def square2(z):
+    print(x) # here: x is taken from global scope
+    return z**2
+p=square2(a)
+print(p)
+    
+def square3(z):
+    #print(x) # Error (local variable not yet known)
+    x = z**2 # x is local variable due to write access
+    return x
+g=square3(x)
+print(g)
+
+
+# write in text mode
+content_lines = ['some\n', 'more', 'content']
+with open('text.txt', 'w') as myfile:
+    myfile.write('Hello World.')
+    myfile.writelines(content_lines)
+    # myfile.close() is called automatically
+    # when leaving this block
+
+# read in text mode
+with open('text.txt', 'r') as myfile:
+    header = myfile.read(10) # first 10 byte
+    print(header)
+    lines = myfile.readlines() # list of lines
+    print(lines)
+    # (starting from file cursor)
+    
